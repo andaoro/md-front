@@ -1,0 +1,114 @@
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import './Login.css'
+
+export const Login = () => {
+    //useState for Login
+    const [username, setusername] = useState('')
+    const [errorUsername, seterrorUsername] = useState(false)
+    const [password, setpassword] = useState('')
+    const [errorPassword, seterrorPassword] = useState(false)
+    const [erros, seterros] = useState('')
+    //UseState for users
+    const [Users, setUsers] = useState([])
+
+    //Navegar entre rutas
+    const navigate = useNavigate()
+
+
+    useEffect(() => {
+        axios.get('http://localhost:4000/users')
+            .then((response) => {
+                setUsers(response.data)
+            })
+    }, [])
+
+    const login = () =>{
+        let findUser = Users.find(user => user.strUser === username)
+        if(findUser){
+            if(password == findUser.strPassword){
+                navigate('/main')
+            }else{
+                seterros('wrong username or password ')
+            }
+        }else{
+            seterros('User not find')
+        }
+    }
+
+
+
+    return (
+        <div className='loginContainer'>
+            <div className='loginCard'>
+                <div className='loginImage'>
+                    <img src='https://i.pinimg.com/564x/48/35/3f/48353f8f7ff6a1c8bca37f8ed953f513.jpg' />
+                </div>
+                <div className='loginform'>
+                    <div className='formBody'>
+                        <span className='logintext'>Username</span>
+                        <input
+                            type={'text'}
+                            className={`formInput userError-${errorUsername}`}
+                            value={username}
+                            onChange={(e) => {
+                                setusername(e.target.value)
+                            }}
+                            onBlur={() => {
+                                if (username !== '') {
+                                    seterrorUsername(false)
+                                } else {
+                                    seterrorUsername(true)
+                                }
+                            }}
+                        />
+                        {
+                            errorUsername&&(
+                                <span style={{color:'red',fontSize:'10px'}}>Username is required</span>
+                            )
+                        }
+                    </div>
+                    <div className='formBody'>
+                        <span className='logintext'>Password</span>
+                        <input
+                            type={'password'}
+                            className={`formInput usepassword-${errorPassword}`}
+                            value={password}
+                            onChange={(e) => {
+                                setpassword(e.target.value)
+                            }}
+                            onBlur={() => {
+                                if (password !== '') {
+                                    seterrorPassword(false)
+                                } else {
+                                    seterrorPassword(true)
+                                }
+                            }}
+                        />
+                        {
+                            errorPassword&&(
+                                <span style={{color:'red',fontSize:'10px'}}>Password is required</span>
+                            )
+                        }
+                    </div>
+                    <div className='loginOtherOptions'>
+                        <span onClick={()=>navigate('/register')}>Register</span>
+                        <span onClick={()=>navigate('/remeberpassw')}>Forgot Password?</span>
+                    </div>
+                    <div 
+                        className='btnlogin'
+                        onClick={()=>login()}
+                    >
+                        <span>Login</span>
+                    </div>
+                    {
+                        erros !== ''&&(
+                            <span>{erros}</span>
+                        )
+                    }
+                </div>
+            </div>
+        </div>
+    )
+}

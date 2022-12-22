@@ -1,0 +1,97 @@
+*{
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+.loginContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(41, 55, 57);
+}
+
+.loginCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #FFFFFF;
+    width: 60vw;
+    height: 80vh;
+    border-radius: 30px;
+    box-shadow: 10px 10px 20px 0px black;
+}
+
+.loginImage{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.loginImage img{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.loginform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+}
+
+.formBody{
+    display: flex;
+    flex-direction: column;
+}
+
+.logintext{
+    font-size: 13px;
+    margin: 13px 0;
+    text-transform: uppercase;
+}
+
+.formInput{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    padding: 4px ;   
+    height: 30px; 
+    width: 200px;
+}
+
+.loginOtherOptions{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.loginOtherOptions span{
+    margin: 20px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btnlogin{
+    background-color: rgb(54, 203, 163);
+    width: 150px;
+    text-align: center;
+    padding: 1rem 0;
+    cursor: pointer;
+}
+
+
+.userError-true{
+    border-bottom: 1px solid red;
+}
+
+.usepassword-true{
+    border-bottom: 1px solid red;
+}
+
