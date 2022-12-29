@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Register.css'
-import { bannerimages } from './images'
+import { Icons, Banner } from './images'
 export const Register = () => {
     const [registerView, setregisterView] = useState(true)
 
@@ -14,8 +14,8 @@ export const Register = () => {
     const [bannerimg, setbannerimg] = useState('')
     const [iconimg, seticonimg] = useState('')
 
-    
-    
+
+    console.log(Banner)
 
     return (
         <div className='registerContainer'>
@@ -38,60 +38,77 @@ export const Register = () => {
                     registerView && (
                         <div className='registerForm'>
                             <div className='registerRowForm'>
-                                <input 
-                                type={'number'} 
-                                placeholder='DNI' 
-                                value={dni} 
-                                onChange={(e)=>setdni(e.target.value)}
-                                className={`registerInput`}
+                                <input
+                                    type={'text'}
+                                    placeholder='Username'
+                                    value={username}
+                                    onChange={(e) => setusername(e.target.value)}
+                                    className={`registerInput`}
                                 />
-                                 <input 
-                                type={'text'} 
-                                placeholder='Name' 
-                                value={name} 
-                                onChange={(e)=>setname(e.target.value)}
-                                className={`registerInput`}
-                                />
-                            </div>
-                            <div className='registerRowForm'>
-                                <input 
-                                type={'text'} 
-                                placeholder='Lastname' 
-                                value={lastname} 
-                                onChange={(e)=>setlastname(e.target.value)}
-                                className={`registerInput`}
-                                />
-                                 <input 
-                                type={'text'} 
-                                placeholder='Email' 
-                                value={email} 
-                                onChange={(e)=>setemail(e.target.value)}
-                                className={`registerInput`}
+                                <input
+                                    type={'password'}
+                                    placeholder='Password'
+                                    value={password}
+                                    onChange={(e) => setpassword(e.target.value)}
+                                    className={`registerInput`}
                                 />
                             </div>
                             <div className='registerRowForm'>
-                                <input 
-                                type={'text'} 
-                                placeholder='Username' 
-                                value={username} 
-                                onChange={(e)=>setusername(e.target.value)}
-                                className={`registerInput`}
+                                <input
+                                    type={'number'}
+                                    placeholder='DNI'
+                                    value={dni}
+                                    onChange={(e) => setdni(e.target.value)}
+                                    className={`registerInput`}
                                 />
-                                 <input 
-                                type={'password'} 
-                                placeholder='Password' 
-                                value={password} 
-                                onChange={(e)=>setpassword(e.target.value)}
-                                className={`registerInput`}
+                                <input
+                                    type={'text'}
+                                    placeholder='Name'
+                                    value={name}
+                                    onChange={(e) => setname(e.target.value)}
+                                    className={`registerInput`}
                                 />
                             </div>
+                            <div className='registerRowForm'>
+                                <input
+                                    type={'text'}
+                                    placeholder='Lastname'
+                                    value={lastname}
+                                    onChange={(e) => setlastname(e.target.value)}
+                                    className={`registerInput`}
+                                />
+                                <input
+                                    type={'text'}
+                                    placeholder='Email'
+                                    value={email}
+                                    onChange={(e) => setemail(e.target.value)}
+                                    className={`registerInput`}
+                                />
+                            </div>
+                            
                         </div>
                     )
                 }
                 {
                     !registerView && (
                         <div className='registerIcons'>
-                            {
+                            <span>Icons</span>
+                            <div className='registerCarouselIcon'>
+                                {
+                                    Icons.map((icon) => (
+                                        <img src={icon} className='iconimg' onClick={() => seticonimg(icon)} />
+                                    ))
+                                }
+                            </div>
+                            <span>Banner</span>
+                            <div className='registerCarouselBanner'>
+                                {
+                                    Banner.map((banner) => (
+                                        <img src={banner} className='iconimg' onClick={() => { setbannerimg(banner) }} />
+                                    ))
+                                }
+                            </div>
+                            {/* {
                                 bannerimages.map((item)=>(
                                     <div className='cardIcons'
                                     onClick={()=>{
@@ -103,27 +120,55 @@ export const Register = () => {
                                         <img src={item.banner} style={{width:'100px'}} className='registerIconProfile'/>
                                     </div>
                                 ))
-                            }
+                            } */}
                         </div>
                     )
                 }
 
                 <div className='btnsregisterlogin'>
                     <span>Register</span>
-                    <span>Login</span>
                 </div>
-
             </div>
 
             <div className='registerbanner'>
                 <div className='registerCard'>
                     <div className='registerbannerimgs'>
-                        <img src={bannerimg} className='registerBanner'/>
-                        <img src={iconimg} className='registerIcon'/>
+                        {
+                            bannerimg !== '' ?
+                                (
+                                    <>
+
+                                        <img src={bannerimg} className='registerBanner' />
+                                    </>
+                                )
+
+                                :
+                                (
+                                    ''
+                                )
+                        }
+                        {
+
+                            iconimg !== '' ?
+                                (
+                                    <>
+
+                                        <img src={iconimg} className='registerIcon' />
+
+                                    </>
+                                )
+
+                                :
+                                (
+                                    ''
+                                )
+
+                        }
+
                     </div>
                     <div className='registerbannerbody'>
-                        <span>{username}<span style={{color:'gray',fontWeight:200}}>  #{dni}</span></span>
-                        <div style={{marginTop:'20px', color:'#E5BA73'}}>
+                        <span>{username}<span style={{ color: 'gray', fontWeight: 200 }}>  #{dni}</span></span>
+                        <div style={{ marginTop: '20px', color: '#E5BA73' }}>
                             <span>{email}</span>
                         </div>
                     </div>

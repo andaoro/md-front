@@ -1,0 +1,166 @@
+*{
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+
+.FullContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.mainView{
+    background-color: aquamarine;
+    height: 100%;
+    width: 60%;
+}
+
+.sideView{
+    background-image: url('https://i.pinimg.com/564x/6d/b9/90/6db990bc96944a58e46b33364fe625ad.jpg');
+    height: 100%;
+    width: 40%;
+}
+
+.navbar{
+    width: 100%;
+    height: 15%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+main{
+    width: 100%;
+    height: 60%;
+    background-color: cadetblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagelogo{
+    width: 80px;
+}
+.navbarContain{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    animation-name: navbarContain;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes navbarContain {
+    0%{
+        transform: translateY(-200px);
+    }   
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.navbarOptions{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    width: 50%;
+    justify-content: space-evenly;
+    color: bisque;align-items: center;
+}
+.navbarLogo{
+    display: flex;
+    width:10%;
+}
+
+.navbarOptions span:hover{
+    background-color: bisque;
+    color: black;
+    transition: 0.2s all ease-in;
+    width: 200px;
+    text-decoration: underline;
+}
+
+.navbarOptions span{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 200px;
+    justify-content: center;
+}
+
+.navbarOptions a:hover{
+    background-color: bisque;
+    color: black;
+    transition: 0.2s all ease-in;
+    width: 200px;
+    text-decoration: underline;
+}
+
+.navbarOptions a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 200px;
+    justify-content: center;
+    text-decoration: none;
+    list-style: none !important;
+    display: inline-flex !important;
+}
+
+.navbarOptions span:last-child:hover::after{
+    content: "+";    
+}
+
+.bodyMain{
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+footer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    height: 25%;
+    background-color:teal;
+}
+
+.cardFooter{
+    width: 200px;
+    background-color:#e7d4be;
+    height: 150px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    position: relative;
+}
+
+.cardFooter img{
+    width: 190px;
+    position: absolute;
+    top: -100px;
+    animation-name: footer;
+    transform: translateX(-1000px);
+    animation-duration: 0.5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    transition: 0.3s all ease-in-out;
+
+}
+@keyframes footer {
+    0%{
+        transform: translateX(-1000px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+.cardFooter img:hover{
+    top: -120px;
+}

@@ -5,6 +5,7 @@
     height: 100vh;
     top: 0;
     left: 0;
+    background-color: #393E46;
 }
 
 .registerData{
@@ -20,19 +21,27 @@
     justify-content: space-around;
 }
 
+
 .registerOptions span{
     width: 50%;
     text-align: center;
     padding: 0.65rem 0;
     cursor: pointer;
+    border: 1px solid #F7F7F7;
 }
 
 .registerSelectOption{
-    background-color: #D6E4E5;
+    background-color: #F2E7D5;
+    color: #000000;
 }
 
+.wait{
+    color: #F7F7F7;
+}
 .wait:hover{
-    background-color: #EFF5F5;
+    background-color: #F7F7F7;
+    color: #000000;
+
 }
 
 .registerRowForm{
@@ -45,9 +54,13 @@
 .registerInput{
     padding: 1rem;
     font-size: 15px;
-    border-radius: 30px;
+    border-radius: 10px;
     outline: none;
     border: 1px solid gray;
+    width: 300px;
+}
+.registerInput:focus{
+    box-shadow: 0px 0px 5px 3px #6D9886;
 }
 
 
@@ -63,9 +76,12 @@
 
 .btnsregisterlogin span{
     cursor: pointer;
-    background-color: #97DECE;
-    padding: 1.2rem;
-
+    background-color: #6D9886;
+    padding: 1.2rem 0;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    color: #F7F7F7;
 }
 
 
@@ -93,7 +109,7 @@
     height: 70%;
     background-color: black;
     border-radius: 30px;
-    border: 7px solid rebeccapurple;
+    border: 7px solid #F2E7D5;
 }
 
 .registerBanner{
@@ -133,16 +149,15 @@
 
 .registerIcons{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
-    overflow-y: scroll;
+    align-items:center;
 }
 
 .cardIcons{
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-evenly;
-    margin: 1rem 0;
+    justify-content: space-around;
     background-color: gray;
 }
 .registerBannerProfile{
@@ -153,4 +168,44 @@
 
 .registerIconProfile{
     height: 80px;
+}
+
+.registerCarouselIcon{
+    width: 80%;
+    height: 150px;
+    display: flex;
+    overflow-x:scroll ;
+    justify-content: space-between;
+}
+
+.registerCarouselIcon::-webkit-scrollbar{
+    height: 8px;
+}
+
+.registerCarouselIcon::-webkit-scrollbar-thumb{
+    background-color: #000000   ;
+    margin-top: 10px;
+}
+
+
+
+.registerCarouselBanner{
+    width: 80%;
+    height: 150px;
+    display: flex;
+    overflow-x:scroll ;
+    justify-content: space-between;
+}
+
+.registerCarouselBanner::-webkit-scrollbar{
+    height: 8px;
+}
+
+.registerCarouselBanner::-webkit-scrollbar-thumb{
+    background-color: #000000   ;
+    margin-top: 10px;
+}
+
+.iconimg{
+    cursor: pointer;
 }

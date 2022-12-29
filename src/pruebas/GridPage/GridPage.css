@@ -1,0 +1,14 @@
+.containerGrid{
+    border: 5px solid salmon;
+    background-color:burlywood;
+    display: grid;
+    grid-template-rows: 100px 100px 100px;
+    grid-auto-columns: 150px;
+    grid-auto-flow: column;
+    gap: 20px;
+}
+
+.item{
+    border:5px solid coral;
+    font-size: 4rem;
+}

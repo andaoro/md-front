@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Login } from './Login/Login';
+import { Gifs } from './pruebas/gifsCurs/Gifs';
+import { GridPage } from './pruebas/GridPage/GridPage';
+import { LandingPage } from './pruebas/landingprueba/LandingPage';
+import { Succeful } from './pruebas/Succeful';
 import { RoutesMain } from './routes/Routes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
