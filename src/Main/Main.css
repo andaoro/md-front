@@ -12,7 +12,26 @@
 
 .banner{
     width: 98.9vw;
+}
 
+.banner img{
+    transform: translateX(-2000px);
+    animation-name: banner;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
+}
+@keyframes banner {
+    0%{
+        transform: translateX(-1000px);
+    }
+    60%{
+        transform: translateX(200px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
 }
 .movileView{
     display: none;
@@ -91,11 +110,13 @@
 
 .card:hover .comprar{
     background-color: green;
+    transform: rotate(360deg);
 }
 
-.card:hover .comprar::after{
-    content: "$";
-
+.carousel{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 @media(max-width:900px){

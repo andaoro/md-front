@@ -1,6 +1,7 @@
 import React from 'react'
 import { Footer } from '../components/Footer/Footer'
 import { Navbar } from '../components/Navbar/Navbar'
+import { Slider } from '../components/Slider/Slider'
 import './Main.css'
 
 export const Main = () => {
@@ -72,14 +73,17 @@ export const Main = () => {
               ))
             }
           </div>
-        </div>
 
-        <div>
-          a
+          
         </div>
+        
       </div>
-      <Footer />
-
+      <div className='masVendidos'>
+              <span>Mas vendidos</span>
+              <div className='carousel'>
+                <Slider/>
+              </div>
+          </div>
     </div>
 
   )

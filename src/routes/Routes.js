@@ -10,8 +10,8 @@ export const RoutesMain = () => {
     <BrowserRouter>
         <Routes>
             <Route path='/' element={<Main/>}/>
-            <Route path='/register' element={<Register/>}/>
-            <Route path='/main' element={<Login/>}/>
+            <Route path='/mangas' element={<Register/>}/>
+            <Route path='/comics' element={<Login/>}/>
         </Routes>
     </BrowserRouter>
   )

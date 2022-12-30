@@ -6,18 +6,21 @@
     height: 100px;
     background-color: #000000;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     z-index: 3;
 }
 
 .bodyNavbar{
     display: flex;
-    width: 90%;
-    justify-content: space-between;
+    width: 70%;
+    justify-content: space-around;
     align-items: center;
     height: 100%;
+    
 }
+
+
 
 .optionsbanner{
     width: 80%;
@@ -26,6 +29,33 @@
     align-items: center;
     color: #FFFFFF;
     height: 100%;
+}
+
+.optionsbanner span:first-child{
+    transform: translateY(-600px);
+    animation-name: bodyNavbar;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.optionsbanner span:nth-child(2){
+    transform: translateY(-600px);
+    animation-name: bodyNavbar;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.optionsbanner span:last-child{
+    transform: translateY(-600px);
+    animation-name: bodyNavbar;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards;
 }
 
 .optionsbanner span{
@@ -45,12 +75,30 @@
     font-size: 18px;
 }
 .imageBodyNavbar{
-    width: 2    00px;
+    width: 200px;
     height: 70px;
+    transform: translateY(-600px);
+    animation-name: bodyNavbar;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
 }
+
+
+
 
 .movileMenuTogle{
     display: none;
+}
+
+@keyframes bodyNavbar {
+    0%{
+        transform: translateY(-600px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
 }
 
 
