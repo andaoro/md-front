@@ -6,13 +6,26 @@ export const Slider = () => {
     const slideShow = useRef(null)
     const slideshowtime = useRef(null)
     const controls = useRef(null)
-    
+
+    const sliderImages = [
+        {
+            id: 1,
+            image: imgprueba,
+            text: 'Capitulo 122'
+        },
+        {
+            id: 2,
+            image: imgprueba,
+            text: 'Next'
+        },
+    ]
+
 
     const siguiente = () => {
         if (slideShow.current.children.length > 0) {
             const primerElemento = slideShow.current.children[0];
 
-            slideShow.current.style.transition = `300ms ease-out all`;
+            slideShow.current.style.transition = `500ms ease-in-out all`;
 
             const tamanoSlide = slideShow.current.children[0].offsetWidth;
 
@@ -42,7 +55,7 @@ export const Slider = () => {
             slideShow.current.style.transform = `translateX(-${tamanoSlide}px)`;
 
             setTimeout(() => {
-                slideShow.current.style.transition = '300ms ease-out all';
+                slideShow.current.style.transition = '500ms ease-in-out all';
                 slideShow.current.style.transform = `translateX(0)`
 
             }, 30);
@@ -50,25 +63,41 @@ export const Slider = () => {
     }
 
     useEffect(() => {
+        /* slideshowtime.current = setInterval(() => {
+            siguiente()
+        }, 1000); */
+
         slideshowtime.current = setInterval(() => {
             siguiente()
-        }, 5000);
+        }, 5000)
 
 
-        controls.current.addEventListener('mouseenter',()=>{
+        controls.current.addEventListener('mouseenter', () => {
             clearInterval(slideshowtime.current)
-            console.log(slideshowtime)
-
         })
 
-        
+        controls.current.addEventListener('mouseleave', () => {
+            slideshowtime.current = setInterval(() => {
+                siguiente()
+            }, 5000)
+        })
+
     }, [])
+
+
+
 
 
     return (
         <div className='contenedorPrincipal'>
             <div className='contenedorSlideShow' ref={slideShow}>
                 <div className='slide'>
+
+                    {
+                        sliderImages.map((slideimg)=>(
+                            
+                        ))
+                    }
                     <a>
                         <img src={imgprueba} />
                     </a>
