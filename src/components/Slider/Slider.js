@@ -1,22 +1,29 @@
 import React, { useEffect, useRef } from 'react'
 import imgprueba from '../../img/1126211.jpg'
+import { GrFormNext, GrFormPrevious,GrNext } from "react-icons/gr";
+import { MdNavigateNext,MdNavigateBefore } from "react-icons/md";
 import './Slider.css'
-export const Slider = () => {
+export const Slider = ({arraySlider}) => {
 
     const slideShow = useRef(null)
     const slideshowtime = useRef(null)
     const controls = useRef(null)
 
+    console.log(arraySlider)
+
     const sliderImages = [
         {
             id: 1,
             image: imgprueba,
-            text: 'Capitulo 122'
+            text: 'Capitulo 122',
+            title:'Chainsaw'
         },
         {
             id: 2,
             image: imgprueba,
-            text: 'Next'
+            text: 'Next',
+            title:'Prueba'
+
         },
     ]
 
@@ -91,58 +98,31 @@ export const Slider = () => {
     return (
         <div className='contenedorPrincipal'>
             <div className='contenedorSlideShow' ref={slideShow}>
-                <div className='slide'>
-
-                    {
-                        sliderImages.map((slideimg)=>(
-                            
-                        ))
-                    }
-                    <a>
-                        <img src={imgprueba} />
-                    </a>
-                    <div className='textoSlide'>
-                        More Popular
-                    </div>
-                </div>
-                <div className='slide'>
-                    <a>
-                        <img src='https://www.dogamanga.com/wp-content/uploads/2021/07/157606_520x520.jpg' style={{ objectFit: 'cover' }} />
-                    </a>
-                    <div className='textoSlide'>
-                        More Popular
-                    </div>
-                </div>
-                <div className='slide'>
-                    <a>
-                        <img src={imgprueba} />
-                    </a>
-                    <div className='textoSlide'>
-                        More Popular
-                    </div>
-                </div>
-                <div className='slide'>
-                    <a>
-                        <img src={'https://m.media-amazon.com/images/I/51m9ctmcRnL._AC_SY780_.jpg'} />
-                    </a>
-                    <div className='textoSlide'>
-                        More Popular
-                    </div>
-                </div>
-
+                {
+                    arraySlider.map((slideimg) => (
+                        <div className='slide' key={slideimg.id}>
+                            <div className='slideImages'>
+                                <img src={slideimg.image}/>
+                            </div>
+                            <div className='textoSlide'>
+                                <span>{slideimg.title}</span>
+                            </div>
+                        </div>
+                    ))
+                }
 
             </div>
             <div className='controles' ref={controls}>
-                <button onClick={() => {
+                <span onClick={() => {
                     siguiente()
                 }}>
-                    derecha
-                </button>
-                <button onClick={() => {
+                    <MdNavigateNext size={50} color='white'/>
+                </span>
+                <span onClick={() => {
                     anterior()
                 }}>
-                    izquierda
-                </button>
+                    <MdNavigateBefore size={50} color='white' />
+                </span>
             </div>
         </div>
     )
