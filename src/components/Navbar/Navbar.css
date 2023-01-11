@@ -101,6 +101,25 @@
     }
 }
 
+.actionsNavbar{
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.userCircle{
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    cursor: pointer;
+    background-image: url('https://i.pinimg.com/736x/6d/96/7b/6d967b7a967812eca7323ecbc50994ba.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
 
 @media(max-width:900px){
 

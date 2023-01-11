@@ -199,6 +199,8 @@
 }
 .infoNovedades span{
     font-weight: 100;
+    max-width: 120px;
+    text-overflow: ellipsis;
 }
 
 .infoNovedades span:first-child:hover{
@@ -248,10 +250,147 @@
     box-shadow: 3px 3px 4px gray;
 }
 
+.generesContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titleGeneres{
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+}
+
+.generes-Body{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+
+.generecard{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s all ease-in-out;
+}
+
+.generecard:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    box-shadow: 0px 0px 10px 2px black;
+}
+
+.generecard div:first-child{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.generecard div:last-child{
+    display: flex;
+    width: 90%;
+    font-size: 12px;
+    text-align: center;
+}
+
+.romcomCard{
+    background-image: url('https://marketplace.canva.com/EAFRRikmlYo/1/0/900w/canva-fondo-de-pantalla-m%C3%B3vil-amor-anime-ilustrado-turquesa-y-rosa-5uBjGW5gO4c.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    overflow: hidden;
+    background-color: rgb(207, 207, 207);
+    background-blend-mode: multiply;
+
+}
+
+.shonenCard{
+    background-image: url('https://pbs.twimg.com/media/FOfYqStWQAYo9jc.jpg');
+    background-size: cover;
+    background-position: center;
+    /* background-color: rgb(126, 126, 126); */
+    background-color: rgba(149, 3, 3, 0.396);
+    color:#ffffff;
+    background-blend-mode: multiply;
+}
+
+.seinenCard{
+    background-image: url('https://static1-es.millenium.gg/articles/5/43/96/5/@/229143-imagen-2021-12-22-171500-article_image_t-1.png');
+    background-size: cover;
+    color:#FFFFFF;
+}
+
+
+
+.genereSlide{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 180px;
+    column-gap: 20px;
+    margin-bottom: 5rem;
+    justify-items: start;
+}
+
+.genereList{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 40px;
+    width: 100%;
+    
+}
+.generelistImage{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.generelistImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.genereListCard {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(56, 56, 56);
+    position: relative;
+    transition: 0.15s all ease-in-out;
+}
+.genereListCard:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    box-shadow: 0px 0px 10px 5px gray;
+}
+.infogenerelist{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.titleCardgeneres{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
 @media(max-width:1200px){
     .cardsBody{
         grid-template-columns: repeat(2,1fr);
         row-gap: 5px;
+    }
+
+    .view{
+        display: inline;
+        width: 100vw;
     }
 }
 
@@ -259,7 +398,34 @@
     .view{
         display: inline;
         width: 100vw;
-        min-height: 500px;
+    }
+
+    .genereList{
+        display: none;
+    }
+
+    .genereSlide{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        height: 150px;
+    }
+
+    .generecard{
+        height: 100%;
+        margin: 0;
+    }
+
+    .title{
+        font-size: 20px;
+    }
+
+    .sliderNovedades{
+        grid-template-columns: repeat(2,1fr);
+        font-size: 10px;
+        column-gap: 5px;
+
     }
 
 
