@@ -7,6 +7,7 @@ import './Navbar.css'
 
 export const Navbar = () => {
   const [movileTogle, setmovileTogle] = useState(false)
+  const [userOptionesToggle, setuserOptionesToggle] = useState(false)
   const navigate = useNavigate()
   return (
     <div className='containerNavbar'>
@@ -31,12 +32,53 @@ export const Navbar = () => {
 
         <div className='actionsNavbar'>
           <AiOutlineShoppingCart size={25} color={'white'} cursor={'pointer'} />
-          <div className='userCircle'>
+          <div className='userCircle'
+            onClick={() => {
+              setuserOptionesToggle(true)
+            }}
+          >
+            <div>
+              <img src='https://i.pinimg.com/736x/6d/96/7b/6d967b7a967812eca7323ecbc50994ba.jpg' style={{
+                borderRadius: '100%'
+              }} />
+
+            </div>
+
+            <div className={`userOptions-cardModal userOptions-visibility-${userOptionesToggle}`}>
+              <div className='userOptions-cardModal-Body'>
+                {/*IMAGENES DE USUARIO  */}
+                <div className='cardModal-ImagesUser'>
+                  <div className='cardModal-ImagesUser-Banner'>
+                    <img src='https://i.pinimg.com/564x/8d/e2/c7/8de2c7a5eab7f3137c901cf71459a0bc.jpg' />
+                    <div className='cardModal-ImagesUser-Icon'>
+                      <img src='https://i.pinimg.com/736x/6d/96/7b/6d967b7a967812eca7323ecbc50994ba.jpg' style={{
+                        borderRadius: '100%'
+                      }} />
+                    </div>
+                  </div>
+                </div>
+
+                <div className='cardModal-Username'>
+                      {/*aqui deberia ir el username */}
+                      <span>andaoro1</span>
+                </div>
+              </div>
+            </div>
           </div>
 
 
         </div>
 
+
+      </div>
+
+
+      <div
+        className={`userOptions-Background userOptions-visibility-${userOptionesToggle}`}
+        onClick={() => {
+          setuserOptionesToggle(false)
+        }}
+      >
 
       </div>
 

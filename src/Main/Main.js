@@ -242,6 +242,8 @@ export const Main = () => {
         </div>
       </div>
 
+      {/*NOVEDADES */}
+      
       <div className='NovedadesContainer'>
         <span className='title'>NOVEDADES</span>
         <div className='sliderNovedades'>
@@ -275,6 +277,22 @@ export const Main = () => {
         </span>
       </div>
 
+      {/*IMAGEN*/}
+
+      <div style={{
+        display:'flex',
+        width:'100%',
+        marginBottom:'2rem',
+        maxHeight:'500px'
+        
+      }}>
+        <img src='https://i.pinimg.com/564x/5e/d8/48/5ed848c61204f2283a8f30064f6ef796.jpg' 
+        style={{
+        objectFit:'cover',
+        width:'100%',
+
+        }}/>
+      </div>
       <div className='generesContainer'>
         <div className='titleGeneres'>
           <span style={{ color: 'gray', fontWeight: 500 }}>Lo mejor de cada mundo</span>
@@ -401,7 +419,6 @@ export const Main = () => {
           </div>
         </div>
       </div>
-
       <Footer/>
     </div>
 

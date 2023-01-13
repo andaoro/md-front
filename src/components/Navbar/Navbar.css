@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    z-index: 3;
+    z-index: 100;
 }
 
 .bodyNavbar{
@@ -112,14 +112,125 @@
 .userCircle{
     width: 45px;
     height: 45px;
-    border-radius: 100%;
+    position: relative;
+
+}
+
+.userCircle img{
+    width: 100%;
+    height: 100%;
     cursor: pointer;
-    background-image: url('https://i.pinimg.com/736x/6d/96/7b/6d967b7a967812eca7323ecbc50994ba.jpg');
-    background-size: cover;
-    background-position: center;
+}
+
+/*USER OPTIONS*/
+.userOptions-Background{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+}
+
+
+.userOptions-visibility-true{
+
+}
+
+.userOptions-visibility-false{
+    display: none;
+}
+
+.userOptions-cardModal{
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    right: 0;
+    z-index: 102;
+    opacity: 0;
+    animation: userOptions-cardModal;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.userOptions-cardModal-Body{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background-color: darkgrey;
+    border-radius: 20px;
+    
+
+}
+
+.cardModal-ImagesUser{
+    width: 100%;
+    height: 30%;
+}
+
+.cardModal-ImagesUser-Banner{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.cardModal-ImagesUser-Banner >img{
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: #000000;
+    background-attachment: fixed;
+    opacity: 0.5;
+    image-rendering:optimizeQuality;
+}
+
+.cardModal-ImagesUser-Icon{
+    position: absolute;
+    bottom: -40px;
+    width:100px ;
+    height:100px ;
+
+}
+
+.cardModal-Username{
+    display: flex;
+    width: 100%;
+    height: 10%;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 1rem 0;
     position: relative;
 }
 
+.cardModal-Username span{
+    font-size: 15px;
+    font-weight: bold;
+    color: darkblue;
+}
+
+.cardModal-Username::after{
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    background-color: #000000;
+    bottom: -10px;
+}
+
+
+
+@keyframes userOptions-cardModal {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 
 @media(max-width:900px){
 
@@ -181,6 +292,6 @@
 
     .containerNavbar{
         position: fixed;
-        z-index: 2;
+        z-index: 99;
     }
 }
