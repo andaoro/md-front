@@ -17,7 +17,7 @@
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    
+    position: relative;
 }
 
 
@@ -83,6 +83,7 @@
     animation-timing-function: ease-in-out;
     animation-delay: 0.2s;
     animation-fill-mode: forwards;
+    cursor: pointer;
 }
 
 
@@ -133,9 +134,6 @@
 }
 
 
-.userOptions-visibility-true{
-
-}
 
 .userOptions-visibility-false{
     display: none;
@@ -159,9 +157,9 @@
     width: 100%;
     height: 100%;
     flex-direction: column;
-    background-color: darkgrey;
+    background-color: #F1F6F5;
     border-radius: 20px;
-    
+    box-shadow: 5px 10px 10px gray;
 
 }
 
@@ -183,9 +181,8 @@
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     background-color: #000000;
-    background-attachment: fixed;
     opacity: 0.5;
-    image-rendering:optimizeQuality;
+    object-fit: cover;
 }
 
 .cardModal-ImagesUser-Icon{
@@ -209,7 +206,7 @@
 .cardModal-Username span{
     font-size: 15px;
     font-weight: bold;
-    color: darkblue;
+    color: #472183;
 }
 
 .cardModal-Username::after{
@@ -221,7 +218,65 @@
     bottom: -10px;
 }
 
+.Actions-cardModal-Loged{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+}
 
+.Actions-cardModal-Loged >div{
+    background-color: #472183;
+    width:70%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px gray;
+    border: none;
+    border-radius: 5px;
+    color: #F1F6F5;
+    transition: 0.25s all ease-in-out;
+}
+
+.Actions-cardModal-Loged >div:hover{
+    background-color: #82C3EC;
+    color: #000000;
+    font-weight: bold;
+    text-align-last: justify;
+}
+
+.Actions-cardModal-Loged-closed{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Actions-cardModal-Loged-closed >div{
+    background-color: #472183;
+    width: 30%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #F1F6F5;
+    transition: 0.5s all ease-in-out;
+}
+
+.Actions-cardModal-Loged-closed >div:hover{
+    width: 70%;
+    background-color: #82C3EC;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 10px;
+}
 
 @keyframes userOptions-cardModal {
     0%{

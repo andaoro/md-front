@@ -75,7 +75,7 @@
     display: flex;
     flex-direction: column;
     transition: 0.23s all ease-in-out;
-    background-color: #ffffff;
+    background-color: #F1F6F5;
     cursor: pointer;
     border-radius: 3px;
 
@@ -99,7 +99,7 @@
 }
 
 .comprar:hover{
-    background-color: green;
+    background-color: #472183;
 }
 
 
@@ -113,7 +113,7 @@
 }
 
 .card:hover .comprar{
-    background-color: green;
+    background-color: #472183;
 }
 
 .carousel{
@@ -202,13 +202,13 @@
 }
 
 .infoNovedades span:first-child:hover{
-    color: tomato;
+    color: #4B56D2;
     cursor: pointer;
 }
 
 .comprarNovedades{
     width: 100%;
-    background-color: gray;
+    background-color: #82C3EC;
     bottom: -20px;
     padding: 1rem 0;
     font-size: 12px;
@@ -230,13 +230,13 @@
 
 
 .comprarNovedades:hover{
-    background-color: rgb(79, 79, 79);
+    background-color: #4B56D2;
 
 }
 .comprarMas{
     margin-top: 4rem;
     margin-bottom: 4rem;
-    background-color: gray;
+    background-color: #4B56D2;
     padding: 0.625rem 4rem;
     color: #FFFFFF;
     cursor: pointer;
@@ -244,7 +244,7 @@
 }
 
 .comprarMas:hover{
-    background-color: rgb(79, 79, 79);
+    background-color: #472183;
     box-shadow: 3px 3px 4px gray;
 }
 

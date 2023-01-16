@@ -13,7 +13,7 @@ export const Navbar = () => {
     <div className='containerNavbar'>
       <div className={`bodyNavbar visible-${movileTogle}`}>
         <div>
-          <img src='https://i.pinimg.com/564x/65/d6/f6/65d6f6e017cca30c13310f44ab1ea560.jpg' alt='a' className='imageBodyNavbar' />
+          <img src='https://i.pinimg.com/564x/65/d6/f6/65d6f6e017cca30c13310f44ab1ea560.jpg' alt='a' className='imageBodyNavbar' onClick={()=>{navigate('/')}}/>
         </div>
 
         <div className={`optionsbanner `}>
@@ -49,10 +49,10 @@ export const Navbar = () => {
                 {/*IMAGENES DE USUARIO  */}
                 <div className='cardModal-ImagesUser'>
                   <div className='cardModal-ImagesUser-Banner'>
-                    <img src='https://i.pinimg.com/564x/8d/e2/c7/8de2c7a5eab7f3137c901cf71459a0bc.jpg' />
+                    <img src='https://i.pinimg.com/564x/15/5e/f9/155ef994a52e5569e6f2ea2fe818de54.jpg' />
                     <div className='cardModal-ImagesUser-Icon'>
                       <img src='https://i.pinimg.com/736x/6d/96/7b/6d967b7a967812eca7323ecbc50994ba.jpg' style={{
-                        borderRadius: '100%'
+                        borderRadius: '100%',
                       }} />
                     </div>
                   </div>
@@ -61,6 +61,25 @@ export const Navbar = () => {
                 <div className='cardModal-Username'>
                       {/*aqui deberia ir el username */}
                       <span>andaoro1</span>
+                </div>
+
+                <div className='Actions-cardModal-Loged'>
+                      <div>
+                        <span>Configuracion</span>
+                      </div>
+                      <div>
+                        <span 
+                        onClick={()=>{
+                          navigate('/profile')
+                        }}
+                        >Mi perfil</span>
+                      </div>
+                </div>
+
+                <div className='Actions-cardModal-Loged-closed'>
+                      <div>
+                        <span>Salir</span>
+                      </div>
                 </div>
               </div>
             </div>
