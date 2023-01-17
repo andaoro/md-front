@@ -1,3 +1,11 @@
+body::-webkit-scrollbar{
+    width: 5px;
+    height: 20px;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #472183;
+}
+
 .container-Profile{
     background-color: #eeeeee;
     width: 100%;
@@ -9,14 +17,19 @@
 
 .profile-personalization{
     width: 60%;
-    border-right: 1px solid black;
     overflow-y: scroll;
     margin-top: 1rem;
-    top: 100px;
-
+    position: relative;
+    background-color: gray;
 }
 
+.profile-personalization::-webkit-scrollbar{
+    width: 5px;
+}
 
+.profile-personalization::-webkit-scrollbar-thumb{
+    background-color: #472183;
+}
 
 .Profile-BannerSelected{
     width: 100%;
@@ -25,6 +38,8 @@
     height: 500px;
     max-height: 500px;
     flex-direction: column;
+    margin-top: 100px;
+
 }
 
 .profile-title{
@@ -41,24 +56,174 @@
     overflow-y: scroll;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(6,1fr);
-    border: 1px solid black;
+    grid-template-columns: repeat(4,1fr);
+    row-gap: 0px;
+    column-gap: 0px;
 }
 
-.bannerImages{
-    height: 120px;
-    background-color: aquamarine;
-    border: 1px solid darkred;
+.Profile-BannerGrid::-webkit-scrollbar{
+    width: 5px;
+    height: 10px;
+}
+
+.Profile-BannerGrid::-webkit-scrollbar-thumb{
+    background-color: #4B56D2;
+}
+
+
+
+.bannerImages > img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background-color: gray;
+    object-fit:cover;
+}
+
+.bannerImages > img:hover{
+    opacity: 0.6;
 }
 
 .salto-linea{
     margin: 4rem 0;
+    background-color: #472183;
+    color: #472183;
 }
 
 .profile-ColorCard{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     height: 300px;
+    margin-bottom: 5rem;
+}
+
+.profile-ColorCard >div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*Acciones de guardar y cancelar */
+.Actions-UserProfile{
+    width: 100%;
+    height: 150px;
+}
+
+.buttons-Actions{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.buttons-Actions button{
+    border: none;
+    width: 30%;
+    height: 30%;
+    cursor: pointer;
+    background-color: #472183;
+    color: aliceblue;
+    transition: 0.25s all ease-in-out;
+}
+
+.buttons-Actions button:hover{
+    width: 35%;
+    opacity: 0.9;
+    box-shadow: 0px 0px 5px 1px #472183;
+}
+
+
+/*parte derecha de la pantalla que hace referencia a la personal card*/
+
+.Profile-card-user{
+    display: flex;
+    width: 40%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-User{
+    width: 60%;
+    height: 75%;
+    margin-top: 100px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px gray;
+}
+
+
+.card-User-Images{
+    width: 100%;
+    height: 30%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.bannerImage-cardUser{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.bannerImage-cardUser >img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    opacity: 0.8;
+    background-color: gray;
+
+}
+
+.iconImage-cardUser{
+    width: 100px;
+    height: 100px;
+    background-color: #eeeeee;
+    position: absolute;
+    bottom: -50px;
+    border-radius: 100%;
+    
+}
+
+.iconImage-cardUser >img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    object-fit: cover;
+    
+}
+
+.card-User-Body{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputRowCard{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.inputCardUser{
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    padding: 0.55rem 0;
+    width: 40%;
+    background: none;
+    font-weight: bold;
+    font-size: 15px;
 }
