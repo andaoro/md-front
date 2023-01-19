@@ -42,9 +42,6 @@ export const Login = () => {
     return (
         <div className='loginContainer'>
             <div className='loginCard'>
-                <div className='loginImage'>
-                    <img src='https://i.pinimg.com/564x/48/35/3f/48353f8f7ff6a1c8bca37f8ed953f513.jpg' />
-                </div>
                 <div className='loginform'>
                     <div className='formBody'>
                         <span className='logintext'>Username</span>
@@ -92,10 +89,10 @@ export const Login = () => {
                             )
                         }
                     </div>
-                    <div className='loginOtherOptions'>
+                    {/* <div className='loginOtherOptions'>
                         <span onClick={()=>navigate('/register')}>Register</span>
                         <span onClick={()=>navigate('/remeberpassw')}>Forgot Password?</span>
-                    </div>
+                    </div> */}
                     <div 
                         className='btnlogin'
                         onClick={()=>login()}

@@ -11,7 +11,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgb(41, 55, 57);
+    background-color: gray;
 }
 
 .loginCard{
@@ -19,8 +19,8 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    background-color: #FFFFFF;
-    width: 60vw;
+    background-color: #F1F6F5;
+    width: 40vw;
     height: 80vh;
     border-radius: 30px;
     box-shadow: 10px 10px 20px 0px black;
@@ -60,6 +60,7 @@
     border: none;
     outline: none;
     border-bottom: 1px solid black;
+    background: none;
     padding: 4px ;   
     height: 30px; 
     width: 200px;

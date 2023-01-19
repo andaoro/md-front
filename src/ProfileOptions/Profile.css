@@ -59,6 +59,23 @@ body::-webkit-scrollbar-thumb{
     grid-template-columns: repeat(4,1fr);
     row-gap: 0px;
     column-gap: 0px;
+
+    animation:profile-BannerGrid ;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+    animation-fill-mode:forwards;
+    transform: translateX(-1000px);
+    animation-delay: 0.5s;
+
+}
+
+@keyframes profile-BannerGrid {
+    0%{
+        transform: translateX(-1000px);
+    }
+    100%{
+        transform: translateX(0);
+    }
 }
 
 .Profile-BannerGrid::-webkit-scrollbar{
@@ -226,4 +243,14 @@ body::-webkit-scrollbar-thumb{
     background: none;
     font-weight: bold;
     font-size: 15px;
+}
+
+.inputCardUser::placeholder{
+    color: darkblue;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

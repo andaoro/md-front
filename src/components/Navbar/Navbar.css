@@ -228,6 +228,37 @@
     margin-top: 1rem;
 }
 
+.Actions-cardModal-login{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Actions-cardModal-login >div{
+    background-color: #472183;
+    width:70%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px gray;
+    border: none;
+    border-radius: 5px;
+    color: #F1F6F5;
+    transition: 0.25s all ease-in-out;
+}
+
+.Actions-cardModal-login >div:hover{
+    background-color: #82C3EC;
+    color: #000000;
+    font-weight: bold;
+    text-align-last: justify;
+}
+
 .Actions-cardModal-Loged >div{
     background-color: #472183;
     width:70%;

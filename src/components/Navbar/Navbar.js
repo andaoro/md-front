@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useNavigate } from 'react-router-dom';
@@ -8,7 +8,27 @@ import './Navbar.css'
 export const Navbar = () => {
   const [movileTogle, setmovileTogle] = useState(false)
   const [userOptionesToggle, setuserOptionesToggle] = useState(false)
+  //Datos de imagenes de banner e icono
+  const [bannerImage, setbannerImage] = useState('')
+  const [iconImage, seticonImage] = useState('')
+  //navigate
   const navigate = useNavigate()
+  const usuarioData = JSON.parse(localStorage.getItem('Usuario'))
+
+  useEffect(() => {
+    if(usuarioData){
+      setbannerImage(usuarioData.bannerImg)
+      seticonImage(usuarioData.iconImg)
+    }else{
+      setbannerImage('https://i.pinimg.com/564x/15/5e/f9/155ef994a52e5569e6f2ea2fe818de54.jpg')
+      seticonImage('https://i.pinimg.com/736x/6d/96/7b/6d967b7a967812eca7323ecbc50994ba.jpg')
+    }
+  }, [])
+  
+
+
+
+
   return (
     <div className='containerNavbar'>
       <div className={`bodyNavbar visible-${movileTogle}`}>
@@ -38,20 +58,21 @@ export const Navbar = () => {
             }}
           >
             <div>
-              <img src='https://i.pinimg.com/736x/6d/96/7b/6d967b7a967812eca7323ecbc50994ba.jpg' style={{
+              <img src={iconImage} style={{
                 borderRadius: '100%'
               }} />
 
             </div>
 
+            {usuarioData?
             <div className={`userOptions-cardModal userOptions-visibility-${userOptionesToggle}`}>
               <div className='userOptions-cardModal-Body'>
                 {/*IMAGENES DE USUARIO  */}
                 <div className='cardModal-ImagesUser'>
                   <div className='cardModal-ImagesUser-Banner'>
-                    <img src='https://i.pinimg.com/564x/15/5e/f9/155ef994a52e5569e6f2ea2fe818de54.jpg' />
+                    <img src={bannerImage} />
                     <div className='cardModal-ImagesUser-Icon'>
-                      <img src='https://i.pinimg.com/736x/6d/96/7b/6d967b7a967812eca7323ecbc50994ba.jpg' style={{
+                      <img src={iconImage} style={{
                         borderRadius: '100%',
                       }} />
                     </div>
@@ -67,11 +88,11 @@ export const Navbar = () => {
                       <div>
                         <span>Configuracion</span>
                       </div>
-                      <div>
-                        <span 
-                        onClick={()=>{
+                      <div onClick={()=>{
                           navigate('/profile')
-                        }}
+                        }}>
+                        <span 
+                        
                         >Mi perfil</span>
                       </div>
                 </div>
@@ -82,7 +103,23 @@ export const Navbar = () => {
                       </div>
                 </div>
               </div>
-            </div>
+            </div>:
+            <div className={`userOptions-cardModal userOptions-visibility-${userOptionesToggle}`}>
+              <div className='userOptions-cardModal-Body'>
+              <div className='Actions-cardModal-login'>
+                      <div onClick={()=>{
+                          navigate('/login')
+                        }}>
+                        <span>Login</span>
+                      </div>
+                      <div >
+                        <span 
+                        
+                        >Sign Up</span>
+                      </div>
+                </div>
+              </div>
+            </div>}
           </div>
 
 
