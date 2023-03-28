@@ -8,12 +8,12 @@ import { Register } from '../Register/Register'
 
 export const RoutesMain = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
         <Routes>
             <Route path='/md-front' element={<Main/>}/>
             <Route path='/profile' element={<Profile/>}/>
             <Route path='/login' element={<Login/>}/>
         </Routes>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
