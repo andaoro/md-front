@@ -33,11 +33,11 @@ export const Navbar = () => {
     <div className='containerNavbar'>
       <div className={`bodyNavbar visible-${movileTogle}`}>
         <div>
-          <img src='https://i.pinimg.com/564x/65/d6/f6/65d6f6e017cca30c13310f44ab1ea560.jpg' alt='a' className='imageBodyNavbar' onClick={()=>{navigate('/')}}/>
+          <img src='https://i.pinimg.com/564x/65/d6/f6/65d6f6e017cca30c13310f44ab1ea560.jpg' alt='a' className='imageBodyNavbar' onClick={()=>{navigate('/md-front')}}/>
         </div>
 
         <div className={`optionsbanner `}>
-          <span onClick={() => { navigate('/') }}>HOME</span>
+          <span onClick={() => { navigate('/md-front') }}>HOME</span>
           <span onClick={() => { navigate('/mangas') }}>MANGAS</span>
           <span onClick={() => { navigate('/comics') }}>COMICS</span>
         </div>

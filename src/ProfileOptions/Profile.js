@@ -53,7 +53,7 @@ export const Profile = () => {
             }
 
             localStorage.setItem('Usuario',JSON.stringify(datosTercero))
-            navigate('/')
+            navigate('/md-front')
         }
     }
 

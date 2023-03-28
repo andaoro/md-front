@@ -10,7 +10,7 @@ export const RoutesMain = () => {
   return (
     <BrowserRouter>
         <Routes>
-            <Route path='/' element={<Main/>}/>
+            <Route path='/md-front' element={<Main/>}/>
             <Route path='/profile' element={<Profile/>}/>
             <Route path='/login' element={<Login/>}/>
         </Routes>
