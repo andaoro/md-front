@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Login.css'
@@ -17,18 +16,11 @@ export const Login = () => {
     const navigate = useNavigate()
 
 
-    useEffect(() => {
-        axios.get('http://localhost:4000/users')
-            .then((response) => {
-                setUsers(response.data)
-            })
-    }, [])
 
     const login = () =>{
-        let findUser = Users.find(user => user.strUser === username)
-        if(findUser){
-            if(password == findUser.strPassword){
-                navigate('/main')
+        if(username === 'admin'){
+            if(password == '1234'){
+                navigate('/profile')
             }else{
                 seterros('wrong username or password ')
             }
